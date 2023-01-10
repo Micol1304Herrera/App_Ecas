@@ -1,20 +1,20 @@
 import React from "react";
-import './Input.css'
+import './Input.css';
 
-const Input = () => {
+const Input = ({ attribute, handleChange, param }) => {
     return (
-        <div>
-            <Input 
-            id=''
-            name=''
-            placeholder='Correo@Ecas.cl o Rut'
-            type=''
-            onChange=''
-            classname=''
+        <div className="input-container">
+            <input
+                id={attribute.id}
+                name={attribute.name}
+                placeholder={attribute.placeholder}
+                type={attribute.type}
+                onChange={(e) => handleChange(e.target.name, e.target.value)}
+                className={ param ? 'input-error' : 'regular-style'}
             />
         </div>
     )
-}
+};
 export default Input
 
 
